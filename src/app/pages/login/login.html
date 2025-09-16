@@ -1,1 +1,9 @@
-<p>login works!</p>
+<form>
+    <h1>Iniciar Sesion</h1>
+    <p>Email</p>
+    <input placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"/>
+    <p>Contraseña</p>
+    <input placeholder="Contraseña" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}"/>
+    <button (click)="comprobarDatos()">Ingresar</button>
+    <button (click)="accesoRapido(`jeronimovilar@outlook.com`, `jero2003`)">Acceso Rapido</button>
+</form>

@@ -1,11 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { SupabaseConnection } from '../../services/database/supabase-connection';
+import { Router } from '@angular/router';
+import { Navbar } from '../../components/navbar/navbar/navbar';
 
 @Component({
   selector: 'app-register',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './register.html',
-  styleUrl: './register.css'
+  styleUrl: './register.css',
 })
 export class Register {
+  constructor(private supabase: SupabaseConnection, private router: Router) {}
 
+  email = '';
+  nombre = '';
+  apellido = '';
+  edad = 0;
+  contrasena = '';
+
+  comprobarDatos() {
+    this.supabase.signUp(this.email, this.contrasena, this.nombre, this.apellido, this.edad).then((response) => {
+      if (response.error != null) {
+        alert('Error al registrar el usuario: ' + response.error.message);
+      }else{
+        localStorage.setItem('logged', "true");
+        window.location.href = '/';
+      }
+    });
+  }
 }
