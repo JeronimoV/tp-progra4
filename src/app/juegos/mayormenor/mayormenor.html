@@ -1,3 +1,5 @@
+<app-modal (cambioModal)="cambioModal($event)" [mensaje]="mensaje" [titulo]="titulo" [modalAbierto]="modalAbierto"/>
+<p class="puntos">Puntos: {{puntos}}</p>
 <div>
     <img (click)="comprobarSeleccion($event)" name="1" src={{imagenCarta1}}/>
     <img class="secreto" (click)="comprobarSeleccion($event)" name="2" src={{imagenCarta2}}/>

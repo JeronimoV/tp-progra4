@@ -1,13 +1,27 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Modal } from '../../components/modal/modal/modal';
 
 @Component({
   selector: 'app-mayormenor',
-  imports: [],
+  imports: [Modal],
   templateUrl: './mayormenor.html',
   styleUrl: './mayormenor.css'
 })
 export class Mayormenor implements OnInit {
 
+  //////modal//////
+
+  mensaje = "Mensaje Prueba";
+  titulo = "Titulo Prueba";
+  modalAbierto = false;
+
+  cambioModal(event: boolean) {
+    this.modalAbierto = event;
+    console.log(event);
+    
+  }
+
+  /////////////////
 
   constructor(private cdr : ChangeDetectorRef) { }
 
@@ -69,7 +83,10 @@ export class Mayormenor implements OnInit {
       let secreto = document.getElementsByClassName("secreto")[0];
       secreto.setAttribute("class", "revelado");
       setTimeout(() => {
-        alert("Perdiste! Tu puntaje fue: " + this.puntos);
+        this.mensaje = "Has perdido, has conseguido " + this.puntos + " puntos.";
+        this.titulo = "Has perdido";
+        this.modalAbierto = true;
+        this.cdr.detectChanges();
         secreto.setAttribute("class", "secreto");
         this.iniciarJuego();
       }, 2000);

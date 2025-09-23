@@ -33,6 +33,8 @@ export class Login {
   contrasena = "";
 
   accesoRapido(email:string, contraseña: string){
+    console.log(localStorage.getItem('logged'));
+    
     this.email = email;
     this.contrasena = contraseña;
     this.comprobarDatos();

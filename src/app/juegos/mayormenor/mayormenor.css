@@ -1,5 +1,5 @@
 div{
-    height: 100vh;
+    height: 70vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -20,4 +20,11 @@ div img:hover{
 .secreto{
     filter: brightness(0.5);
     border-radius: 5px;
+}
+
+.puntos{
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    margin-top: 2vw;
 }

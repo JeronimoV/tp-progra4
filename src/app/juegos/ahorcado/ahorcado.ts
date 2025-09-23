@@ -91,14 +91,24 @@ export class Ahorcado implements OnInit {
     });
     this.puntos++; //Suma un punto
     this.mapearArreglo();
+    if(this.letrasDescubiertas.join("") == this.palabraSecreta.join("")){ //Comprueba si las letras descubiertas son iguales a la palabra secreta
+      this.modalAbierto = true;
+      this.titulo = "Ganaste";
+      this.mensaje = "Felicitaciones, has adivinado la palabra!";
+      this.obtenerPalabraSecreta();
+    }
     }else{
-      this.puntos--; //Resta un punto
+      if(this.puntos > 0){
+        this.puntos--; //Resta un punto
+      }
       this.vidasRestantes--; //Si no existe, resta una vida
     }
 
     if(this.vidasRestantes <= 0){
       this.puntos = 0;
       this.modalAbierto = true;
+      this.titulo = "Perdiste";
+      this.mensaje = "La palabra era: " + this.palabraSecreta.join("");
       this.obtenerPalabraSecreta();
     }
   }
