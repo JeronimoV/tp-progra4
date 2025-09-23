@@ -13,6 +13,20 @@ import { Navbar } from '../../components/navbar/navbar/navbar';
 export class Register {
   constructor(private supabase: SupabaseConnection, private router: Router) {}
 
+  //////modal//////
+
+  mensaje = "Mensaje Prueba";
+  titulo = "Titulo Prueba";
+  modalAbierto = false;
+
+  cambioModal(event: boolean) {
+    this.modalAbierto = event;
+    console.log(event);
+    
+  }
+
+  /////////////////
+
   email = '';
   nombre = '';
   apellido = '';
@@ -22,7 +36,9 @@ export class Register {
   comprobarDatos() {
     this.supabase.signUp(this.email, this.contrasena, this.nombre, this.apellido, this.edad).then((response) => {
       if (response.error != null) {
-        alert('Error al registrar el usuario: ' + response.error.message);
+        this.modalAbierto=true;
+        this.titulo="Error";
+        this.mensaje=response.error.message;
       }else{
         localStorage.setItem('logged', "true");
         window.location.href = '/';

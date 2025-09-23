@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SupabaseConnection } from '../../services/database/supabase-connection';
 
 @Component({
   selector: 'app-bienvenida',
@@ -7,10 +8,18 @@ import { RouterLink } from '@angular/router';
   templateUrl: './bienvenida.html',
   styleUrls: ['./bienvenida.css']
 })
-export class Bienvenida {
+export class Bienvenida implements OnInit {
+
+  constructor(private supabase : SupabaseConnection) {}
+
   bienvenida : boolean = true;
+
+  ngOnInit(): void {
+    this.supabase.sendMessage('1','hola');
+  }
 
   darBienvenida(){
     this.bienvenida = false;
+
   }
 }

@@ -27,4 +27,12 @@ export class SupabaseConnection {
   getUserName() {
     return this.supabase.auth.getUser();
   }
+
+  sendMessage(id :string,message: string) {
+    return this.supabase.from('messages').insert([{id : Number ,message: message }]);
+  }
+
+  posts = this.supabase.channel('public:messages').on("postgres_changes", { event: "*", schema: "public", table: "messages" }, (payload) => {
+    console.log('Change received!', payload)
+  }).subscribe();
 }
