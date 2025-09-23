@@ -1,4 +1,17 @@
-<div class="main">
-    <h1>Bienvenido</h1>
-    <a routerLink="/inicio">Ingresar</a>
-</div>
+@if(bienvenida){
+    <div class="main">
+        <h1>Bienvenido</h1>
+        <a (click)="darBienvenida()" routerLink="/inicio">Ingresar</a>
+    </div>
+}@else {
+    <div class="contenedor">
+        <div routerLink="/ahorcado" class="card">
+            <img src="https://revistaliterariamonolito.com/wp-content/uploads/2018/10/Ahorcado-1024x640.jpg"/>
+            <p>Ahorcado</p>
+        </div>
+        <div routerLink="/mayormenor" class="card">
+            <img src="https://media.istockphoto.com/id/1423118361/es/foto/manos-de-personas-mayores-eligiendo-cartas-de-una-baraja-de-cartas-espa%C3%B1olas.jpg?s=612x612&w=0&k=20&c=D1QCUVmSAGTTRL-oTQBFfqya9xZmyUh31zbFS0pz9pE="/>
+            <p>Mayor o Menor</p>
+        </div>
+    </div>
+}

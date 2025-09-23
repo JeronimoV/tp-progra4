@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.casilleros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 5vw;
+}
+
+.teclado{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+}

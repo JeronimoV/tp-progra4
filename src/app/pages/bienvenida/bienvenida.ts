@@ -8,5 +8,9 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./bienvenida.css']
 })
 export class Bienvenida {
+  bienvenida : boolean = true;
 
+  darBienvenida(){
+    this.bienvenida = false;
+  }
 }
