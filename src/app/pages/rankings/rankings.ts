@@ -8,7 +8,6 @@ import { GameInfo } from '../../services/gameInfo/game-info';
   styleUrl: './rankings.css',
 })
 export class Rankings {
-
   cantidadRankings = 15;
 
   puntajes: any = [];
@@ -24,17 +23,20 @@ export class Rankings {
     this.puntajesReflejos,
   ];
 
-  constructor(private gameInfo: GameInfo, private cdr : ChangeDetectorRef) {
+  constructor(private gameInfo: GameInfo, private cdr: ChangeDetectorRef) {
     gameInfo
       .obtenerPuntajes()
       .then((response) => (this.puntajes = response.data))
       .then((response) => this.separarPuntajesJuegos())
       .then((response) => this.bucleEjecuionVariables(this.ordenarPuntajes.bind(this)))
-      .then((response) => this.bucleEjecuionVariables(this.rellenarArrays.bind(this))).then(response => cdr.detectChanges());
+      .then((response) => this.bucleEjecuionVariables(this.rellenarArrays.bind(this)))
+      .then((response) => cdr.detectChanges());
   }
 
   separarPuntajesJuegos() {
     this.puntajes.forEach((element: any) => {
+      console.log(element);
+
       switch (element.game) {
         case 'ahorcado':
           this.puntajesAhorcado.push(element);
@@ -42,7 +44,7 @@ export class Rankings {
         case 'preguntados':
           this.puntajesPreguntados.push(element);
           break;
-        case 'break':
+        case 'mayormenor':
           this.puntajesMayorMenor.push(element);
           break;
         case 'reflejos':
@@ -59,11 +61,20 @@ export class Rankings {
   }
 
   ordenarPuntajes(array: any) {
+    
     array.sort((a: any, b: any) => {
-      if (a.points < b.points) {
-        return 1;
+      if (array == this.puntajesReflejos) {
+        if (a.points < b.points) {
+          return -1;
+        } else {
+          return 1;
+        }
       } else {
-        return -1;
+        if (a.points < b.points) {
+          return 1;
+        } else {
+          return -1;
+        }
       }
     });
   }
@@ -73,8 +84,8 @@ export class Rankings {
     if (array.length > this.cantidadRankings) {
       array.slice(-cantidadAModificar);
     } else {
-      for (let i = 0; i < Math.abs(cantidadAModificar); i++ ) {
-        array.push({points:0});
+      for (let i = 0; i < Math.abs(cantidadAModificar); i++) {
+        array.push({ name: 'Nadie', points: 0 });
       }
     }
   }

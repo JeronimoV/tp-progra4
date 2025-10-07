@@ -1,4 +1,4 @@
-@if(bienvenida){
+@if(bienvenida == null || bienvenida == "false"){
     <div class="main">
         <h1>Bienvenido</h1>
         <a (click)="darBienvenida()" routerLink="/inicio">Ingresar</a>
@@ -24,10 +24,18 @@
         
     </div>
     <div class="contenedor-chat">
+        <p class="texto-invisible">Chat</p>
         <div class="mensajes">
             @for (item of mensajes | async; track item.id) {
-            <div>
-                <strong>{{ item.name }}:</strong> {{ item.message }}
+            <div class="mensaje">
+                <div>
+                    @if(name == item.name){
+                        <strong>Tu:</strong> {{ item.message }}
+                    }@else {
+                        <strong>{{ item.name }}:</strong> {{ item.message }}
+                    }
+                </div>
+                <p>{{item.created_at | date:"shortTime"}}</p>
             </div>
     }
         </div>

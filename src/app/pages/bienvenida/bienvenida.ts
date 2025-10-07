@@ -1,17 +1,17 @@
-import { Component , OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { RealtimeChat, Message } from '../../services/database/realtime-chat/realtime-chat';
 
 @Component({
   selector: 'app-bienvenida',
-  imports: [RouterLink, FormsModule, AsyncPipe],
+  imports: [RouterLink, FormsModule, AsyncPipe, DatePipe],
   templateUrl: './bienvenida.html',
   styleUrls: ['./bienvenida.css']
 })
-export class Bienvenida implements OnInit {
+export class Bienvenida {
 
   mensajes : Observable<Message[]> = new Observable<Message[]>()
 
@@ -19,26 +19,25 @@ export class Bienvenida implements OnInit {
     this.mensajes = realtimeChat.getMessages();
   }
 
+  name = localStorage.getItem("name") ?? ""
   texto = ""
-  bienvenida : boolean = true;
-
-  ngOnInit(): void {
-    console.log(this.texto);
-    
-  }
+  bienvenida = localStorage.getItem("bienvenida") ?? null;
 
   darBienvenida(){
-    this.bienvenida = false;
-
+    console.log(this.bienvenida);
+    
+    localStorage.setItem("bienvenida", "true");
+    this.bienvenida = "true";
+    
+    console.log(this.bienvenida);
   }
 
   enviarMensaje(){
-    let name = localStorage.getItem("name");
     
-    
-    if(name != null){
-      this.realtimeChat.sendMessage(name, this.texto).then(res => console.log(res))
+    if(this.name != null && this.texto.trim() != ""){
+      this.realtimeChat.sendMessage(this.name, this.texto).then(res => console.log(res))
       this.texto = "";
     }
+    
   }
 }

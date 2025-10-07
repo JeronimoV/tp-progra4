@@ -1,16 +1,5 @@
 import { SupabaseConnection } from "../services/database/supabase-connection";
 
-export function isLogged(){
-    let logged = localStorage.getItem("logged");
-    let name = localStorage.getItem("name");
-
-    if(logged != null && name != null){
-        return true;
-    }else{
-        return false;
-    }
-}
-
 export async function getUserName(supabase : SupabaseConnection){
     let name = localStorage.getItem("name");
     if(name == null){

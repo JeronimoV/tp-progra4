@@ -82,13 +82,40 @@
     flex-direction: column;
     background-color: #52238B;
     width: fit-content;
-    height: 88vh;
+    height: 5vh;
     bottom: 0px;
     border-radius: 5px;
     margin-left: 3vw;
+    transition: 0.3s;
+}
+
+.contenedor-chat:hover{
+    height: 90vh;
+}
+
+.contenedor-chat:hover .mensajes{
+    opacity: 1;
+    transition: 1s;
+}
+
+.contenedor-chat:hover .texto-invisible{
+    display: none;
+    transition: 0s;
+}
+
+.texto-invisible{
+    display: block;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+    transition: 1s;
 }
 
 .mensajes{
+    opacity: 0;
     background-color: #222222;
     color: white;
     width: 20vw;
@@ -100,6 +127,13 @@
     flex-direction: column;
     justify-content: flex-end; 
     padding: 1vw;
+    transition: 0.2s;
+}
+
+.mensaje{
+    display: flex;
+    justify-content: space-between;
+    height: 4vh;
 }
 
 form{

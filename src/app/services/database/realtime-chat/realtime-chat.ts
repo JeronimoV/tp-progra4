@@ -7,6 +7,7 @@ export interface Message{
   id: number;
   name : string;
   message: string;
+  created_at: string;
 }
 
 @Injectable({

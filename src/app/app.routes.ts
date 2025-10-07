@@ -8,16 +8,17 @@ import { Mayormenor } from './juegos/mayormenor/mayormenor';
 import { Preguntados } from './juegos/preguntados/preguntados';
 import { TestReflejos } from './juegos/test-reflejos/test-reflejos';
 import { Rankings } from './pages/rankings/rankings';
+import { isLoggedGuard } from './guards/is-logged-guard';
 
 export const routes: Routes = [
-    {path:"", component: Bienvenida},
-    {path:"quien-soy", component: QuienSoy},
+    {path:"", component: Bienvenida, canActivate: [isLoggedGuard]},
+    {path:"quien-soy", component: QuienSoy, canActivate: [isLoggedGuard]},
     {path:"login", component: Login},
     {path:"register", component: Register},
-    {path:"ahorcado", component: Ahorcado},
-    {path:"mayormenor", component: Mayormenor},
-    {path:"preguntados", component: Preguntados},
-    {path:"testReflejos", component: TestReflejos},
-    {path:"rankings", component: Rankings},
+    {path:"ahorcado", component: Ahorcado, canActivate: [isLoggedGuard]},
+    {path:"mayormenor", component: Mayormenor, canActivate: [isLoggedGuard]},
+    {path:"preguntados", component: Preguntados, canActivate: [isLoggedGuard]},
+    {path:"testReflejos", component: TestReflejos, canActivate: [isLoggedGuard]},
+    {path:"rankings", component: Rankings, canActivate: [isLoggedGuard]},
     {path:"**", redirectTo:""}
 ];

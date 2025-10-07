@@ -87,7 +87,8 @@ export class Ahorcado implements OnInit {
     console.log(letra);
 
     let letraExiste = this.palabraSecreta.includes(letra); //Comprueba que exista la letra en el arreglo
-    if (letraExiste) {
+    let letraYaDescubierta = this.letrasDescubiertas.includes(letra); //Comprueba que la letra no haya sido descubierta ya
+    if (letraExiste && !letraYaDescubierta) {
       this.palabraSecreta.forEach((caracter, index) => {
         //Como si existe, lo recorre
 
