@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SupabaseConnection } from '../../services/database/supabase-connection';
-import { Router } from '@angular/router';
 import { Modal } from '../../components/modal/modal/modal';
 
 @Component({
@@ -11,7 +10,7 @@ import { Modal } from '../../components/modal/modal/modal';
   styleUrl: './login.css'
 })
 export class Login {
-  constructor(private supabase: SupabaseConnection, private router: Router) {}
+  constructor(private supabase: SupabaseConnection) {}
 
 
   //////modal//////
@@ -49,6 +48,8 @@ export class Login {
       }else{
         localStorage.setItem('logged', "true");
         localStorage.setItem("id", response.data.user.id);
+        localStorage.setItem("name", response.data.user.user_metadata["nombre"]);
+        
         
         window.location.href = '/';
       }

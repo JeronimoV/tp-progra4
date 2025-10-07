@@ -30,9 +30,9 @@
             <div class="mensaje">
                 <div>
                     @if(name == item.name){
-                        <strong>Tu:</strong> {{ item.message }}
+                        <p class="txt"><strong>Tu:</strong> {{ item.message }}</p>
                     }@else {
-                        <strong>{{ item.name }}:</strong> {{ item.message }}
+                        <p class="txt"><strong>{{ item.name }}:</strong> {{ item.message }}</p>
                     }
                 </div>
                 <p>{{item.created_at | date:"shortTime"}}</p>
