@@ -1,0 +1,184 @@
+{
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es el río más largo del mundo?",
+      "respuestas": [
+        "Yangtsé",
+        "c-Río Amazonas",
+        "Misisipi",
+        "Nilo"
+      ]
+    },
+    {
+      "pregunta": "¿Quién escribió 'Cien años de soledad'?",
+      "respuestas": [
+        "Julio Cortázar",
+        "Mario Vargas Llosa",
+        "c-Gabriel García Márquez",
+        "Isabel Allende"
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es la capital de Australia?",
+      "respuestas": [
+        "Melbourne",
+        "Sídney",
+        "c-Canberra",
+        "Brisbane"
+      ]
+    },
+    {
+      "pregunta": "¿Qué planeta es el más cercano al Sol?",
+      "respuestas": [
+        "Venus",
+        "Tierra",
+        "c-Mercurio",
+        "Marte"
+      ]
+    },
+    {
+      "pregunta": "¿En qué año comenzó la Segunda Guerra Mundial?",
+      "respuestas": [
+        "1941",
+        "c-1939",
+        "1945",
+        "1936"
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es el idioma más hablado en el mundo?",
+      "respuestas": [
+        "Español",
+        "Inglés",
+        "c-Chino mandarín",
+        "Hindú"
+      ]
+    },
+    {
+      "pregunta": "¿Qué gas es esencial para la respiración humana?",
+      "respuestas": [
+        "c-Oxígeno",
+        "Helio",
+        "Dióxido de carbono",
+        "Nitrógeno"
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es el océano más grande del planeta?",
+      "respuestas": [
+        "Océano Índico",
+        "Océano Ártico",
+        "c-Océano Pacífico",
+        "Océano Atlántico"
+      ]
+    },
+    {
+      "pregunta": "¿Qué país tiene forma de bota?",
+      "respuestas": [
+        "c-Italia",
+        "Grecia",
+        "Portugal",
+        "España"
+      ]
+    },
+    {
+      "pregunta": "¿Quién pintó la Mona Lisa?",
+      "respuestas": [
+        "Michelangelo",
+        "Pablo Picasso",
+        "c-Leonardo da Vinci",
+        "Vincent van Gogh"
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es el metal más ligero?",
+      "respuestas": [
+        "Aluminio",
+        "Plomo",
+        "Hierro",
+        "c-Litio"
+      ]
+    },
+    {
+      "pregunta": "¿En qué continente se encuentra Egipto?",
+      "respuestas": [
+        "Europa",
+        "Asia",
+        "América",
+        "c-África"
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es la capital de Canadá?",
+      "respuestas": [
+        "Toronto",
+        "Montreal",
+        "c-Ottawa",
+        "Vancouver"
+      ]
+    },
+    {
+      "pregunta": "¿Qué instrumento mide los terremotos?",
+      "respuestas": [
+        "Altímetro",
+        "c-Sismógrafo",
+        "Barómetro",
+        "Termómetro"
+      ]
+    },
+    {
+      "pregunta": "¿Qué órgano del cuerpo humano bombea la sangre?",
+      "respuestas": [
+        "Riñón",
+        "Pulmón",
+        "c-Corazón",
+        "Hígado"
+      ]
+    },
+    {
+      "pregunta": "¿Quién descubrió América?",
+      "respuestas": [
+        "Hernán Cortés",
+        "c-Cristóbal Colón",
+        "Marco Polo",
+        "Américo Vespucio"
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es el país más grande del mundo?",
+      "respuestas": [
+        "Estados Unidos",
+        "China",
+        "c-Rusia",
+        "Canadá"
+      ]
+    },
+    {
+      "pregunta": "¿Qué color resulta de mezclar azul y amarillo?",
+      "respuestas": [
+        "Morado",
+        "Gris",
+        "c-Verde",
+        "Naranja"
+      ]
+    },
+    {
+      "pregunta": "¿Qué científico formuló la teoría de la relatividad?",
+      "respuestas": [
+        "Galileo Galilei",
+        "Stephen Hawking",
+        "Isaac Newton",
+        "c-Albert Einstein"
+      ]
+    },
+    {
+      "pregunta": "¿Qué país ganó el Mundial de Fútbol 2018?",
+      "respuestas": [
+        "Brasil",
+        "c-Francia",
+        "Alemania",
+        "Croacia"
+      ]
+    }
+  ]
+}

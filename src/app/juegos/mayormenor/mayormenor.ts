@@ -1,9 +1,11 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Modal } from '../../components/modal/modal/modal';
+import { GameInfo } from '../../services/gameInfo/game-info';
+import { VolverBoton } from '../../components/volver-boton/volver-boton';
 
 @Component({
   selector: 'app-mayormenor',
-  imports: [Modal],
+  imports: [Modal, VolverBoton],
   templateUrl: './mayormenor.html',
   styleUrl: './mayormenor.css'
 })
@@ -23,8 +25,10 @@ export class Mayormenor implements OnInit {
 
   /////////////////
 
-  constructor(private cdr : ChangeDetectorRef) { }
+  constructor(private cdr : ChangeDetectorRef, private gameInfo : GameInfo) { }
 
+  name: string = localStorage.getItem('name') ?? '';
+  user_id: string = localStorage.getItem('id') ?? '';
   puntos: number = 0;
   imagenCarta1: string = '';
   imagenCarta1Valor: number = 0;
@@ -40,8 +44,6 @@ export class Mayormenor implements OnInit {
   }
 
   iniciarJuego(){
-    console.log("Entre putos");
-    
     this.imagenCarta1 = this.obtenerCartaAleatoria();
     this.imagenCarta2 = this.obtenerCartaAleatoria();
     this.imagenCarta1Valor = parseInt(this.imagenCarta1.split('/')[1].split('.')[0]);
@@ -66,22 +68,15 @@ export class Mayormenor implements OnInit {
       cartaMayor = 0;
     }
 
-    if((event.target.name=="1" && cartaMayor == this.imagenCarta1Valor) || cartaMayor == 0 ){
-      this.puntos++;
-      this.imagenCarta2 = this.obtenerCartaAleatoria()
-      this.imagenCarta2Valor = parseInt(this.imagenCarta2.split('/')[1].split('.')[0]);
-    }else if(event.target.name=="2" && cartaMayor == this.imagenCarta2Valor){
-      console.log("entre ");
-      
-      this.puntos++;
-      this.imagenCarta1 = this.imagenCarta2;
-      this.imagenCarta1Valor = this.imagenCarta2Valor;
-      this.imagenCarta2 = this.obtenerCartaAleatoria()
-      this.imagenCarta2Valor = parseInt(this.imagenCarta2.split('/')[1].split('.')[0]);
+    if((event.target.name=="true" && cartaMayor == this.imagenCarta2Valor) || cartaMayor == 0 ){
+      this.seleccionCorrecta();
+    }else if(event.target.name=="false" && cartaMayor != this.imagenCarta2Valor){  
+      this.seleccionCorrecta();
     }else{
       //Modal de perder
       let secreto = document.getElementsByClassName("secreto")[0];
       secreto.setAttribute("class", "revelado");
+      this.gameInfo.subirPuntaje("mayormenor", this.user_id, this.puntos, this.name)
       setTimeout(() => {
         this.mensaje = "Has perdido, has conseguido " + this.puntos + " puntos.";
         this.titulo = "Has perdido";
@@ -92,5 +87,12 @@ export class Mayormenor implements OnInit {
       }, 2000);
     }
   }
-  
+
+  seleccionCorrecta(){
+    this.puntos++;
+    this.imagenCarta1 = this.imagenCarta2;
+    this.imagenCarta1Valor = this.imagenCarta2Valor;
+    this.imagenCarta2 = this.obtenerCartaAleatoria()
+    this.imagenCarta2Valor = parseInt(this.imagenCarta2.split('/')[1].split('.')[0]);
+  }
 }

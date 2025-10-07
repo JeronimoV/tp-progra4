@@ -1,0 +1,50 @@
+.container{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vw;
+    height: 90%;
+    background-color: #1F1F1F;
+}
+
+.container button{
+    width: 30vw;
+    height: 30vh;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(58, 146, 58);
+    color: white;
+    font-size: 2vw;
+    font-weight: bolder;
+    transition: 0.3s;
+}
+
+.container button:hover{
+    transform: scale(1.05);
+    background-color: rgb(39, 97, 39);
+}
+
+.container button:active{
+    background-color: rgb(16, 41, 16);
+}
+
+.formula1{
+    position: absolute;
+    width: 13vw;
+    height: 3vw;
+    bottom: 0;
+    left: 0px;
+    object-fit: cover;
+    transform: scaleX(-1);
+    transition: 1s;
+}

@@ -1,13 +1,20 @@
 <app-modal (cambioModal)="cambioModal($event)" [mensaje]="mensaje" [titulo]="titulo" [modalAbierto]="modalAbierto"/>
 
-<form>
-    <h1>Iniciar Sesion</h1>
-    <p>Email</p>
-    <input placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"/>
-    <p>Contraseña</p>
-    <input placeholder="Contraseña" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}"/>
-    <button (click)="comprobarDatos()">Ingresar</button>
-    <button (click)="accesoRapido(`jeronimovilar@outlook.com`, `jero2003`)">Acceso Rapido</button>
-    <button (click)="accesoRapido(`jeronimoevilar@outlook.com`, `jero2003`)">Acceso Rapido</button>
-    <button (click)="accesoRapido(`maniceroel@outlook.com`, `jero2003`)">Acceso Rapido</button>
-</form>
+<div class="container">
+    <form>
+        <h1>Iniciar Sesion</h1>
+        <div class="datos">
+            <p>Email</p>
+            <input placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"/>
+        </div>
+        <div class="datos">
+            <p>Contraseña</p>
+            <input placeholder="Contraseña" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}"/>
+        </div>
+
+        <button (click)="comprobarDatos()">Ingresar</button>
+        <button (click)="accesoRapido(`jeronimovilar@outlook.com`, `jero2003`)">Acceso Rapido</button>
+        <button (click)="accesoRapido(`jeronimoevilar@outlook.com`, `jero2003`)">Acceso Rapido</button>
+        <button (click)="accesoRapido(`maniceroel@outlook.com`, `jero2003`)">Acceso Rapido</button>
+    </form>
+</div>

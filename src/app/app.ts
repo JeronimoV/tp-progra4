@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, signal } from '@angular/core';
-import { RouterOutlet, Router } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar/navbar';
 
 @Component({
@@ -9,7 +9,7 @@ import { Navbar } from './components/navbar/navbar/navbar';
   styleUrl: './app.css'
 })
 export class App {
-
+  
 
   protected readonly title = signal('sala_juegos');
 

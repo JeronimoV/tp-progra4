@@ -1,0 +1,13 @@
+<app-volver-boton/>
+<app-modal (cambioModal)="cambioModal($event)" [mensaje]="mensaje" [titulo]="titulo" [modalAbierto]="modalAbierto"/>
+<div class="container">
+    <div>
+        <img [src]="imagenSeleccionadaURL()"/>
+        @if(juegoIniciado == false){
+            <button (click)="iniciarRondas()">Click para comenzar</button>
+        }@else{
+            <button (click)="botonClick()">{{estado()}}</button>
+        }
+    </div>
+</div>
+<img class="formula1" src="formula1.png"/>

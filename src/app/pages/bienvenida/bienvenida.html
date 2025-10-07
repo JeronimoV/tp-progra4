@@ -13,14 +13,27 @@
             <img src="https://media.istockphoto.com/id/1423118361/es/foto/manos-de-personas-mayores-eligiendo-cartas-de-una-baraja-de-cartas-espa%C3%B1olas.jpg?s=612x612&w=0&k=20&c=D1QCUVmSAGTTRL-oTQBFfqya9xZmyUh31zbFS0pz9pE="/>
             <p>Mayor o Menor</p>
         </div>
+        <div routerLink="/preguntados" class="card">
+            <img src="https://blog.duolingo.com/content/images/2024/06/cover-EN-questions-hub.png"/>
+            <p>Preguntados</p>
+        </div>
+        <div routerLink="/testReflejos" class="card">
+            <img src="https://media.es.wired.com/photos/63e55ba0bc755c9a2a93f629/1:1/w_2100,h_2100,c_limit/semaforo%20cuarto%20color%20inteligencia%20artificial.jpg"/>
+            <p>Test Reflejos F1</p>
+        </div>
+        
     </div>
     <div class="contenedor-chat">
         <div class="mensajes">
-
+            @for (item of mensajes | async; track item.id) {
+            <div>
+                <strong>{{ item.name }}:</strong> {{ item.message }}
+            </div>
+    }
         </div>
         <form>
-            <input type="text" placeholder="Escribe tu mensaje..." />
-            <button type="submit">Enviar</button>
+            <input [(ngModel)]="texto" [ngModelOptions]="{standalone: true}" type="text" placeholder="Escribe tu mensaje..." />
+            <button (click)="enviarMensaje()" type="submit">Enviar</button>
         </form>
     </div>
 }

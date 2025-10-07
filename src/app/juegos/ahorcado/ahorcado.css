@@ -2,11 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .header img{
     height: 20vw;
-    width: auto;
+    width: 20vw;
+    object-fit: cover;
+    filter:invert(1);
 }
 
 .casilleros{
@@ -19,21 +22,42 @@
 }
 
 .teclado{
-    width: 20vw;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 0.4vw;
 }
 
 .tecla{
-    height: 2vw;
-    width: 2vw;
+    height: 4vw;
+    width: 4vw;
     border: none;
-    background-color: rgb(176, 66, 204);
+    background-color: #52238B;
     color: white;
     border-radius: 5px;
     transition: 0.3s;
+    margin: 0.5vw;
+}
+
+.tecla-erronea{
+    height: 4vw;
+    width: 4vw;
+    border: none;
+    background-color: #c00808;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin: 0.5vw;
+}
+
+.tecla-correcta{
+    height: 4vw;
+    width: 4vw;
+    border: none;
+    background-color: #00ff2aa9;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin: 0.5vw;
 }
 
 .tecla:hover{
@@ -57,4 +81,5 @@
     gap: 5vw;
     justify-content: center;
     align-items: center;
+    color: white;
 }

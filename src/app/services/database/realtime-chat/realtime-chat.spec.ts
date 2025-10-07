@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CreateUser } from './create-user';
+import { RealtimeChat } from './realtime-chat';
 
-describe('CreateUser', () => {
-  let service: CreateUser;
+describe('RealtimeChat', () => {
+  let service: RealtimeChat;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CreateUser);
+    service = TestBed.inject(RealtimeChat);
   });
 
   it('should be created', () => {

@@ -1,3 +1,4 @@
+<app-volver-boton/>
 <app-modal (cambioModal)="cambioModal($event)" [mensaje]="mensaje" [titulo]="titulo" [modalAbierto]="modalAbierto"/>
 
 <div class="numeros">
@@ -6,7 +7,7 @@
 </div>
 
 <div class="header">
-    <img src="https://www.shutterstock.com/image-vector/hangman-icon-vector-symbol-design-600nw-2516503065.jpg"/>
+    <img [src]="monigotePosicion"/>
     <div class="casilleros">
         
     </div>

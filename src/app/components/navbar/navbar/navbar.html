@@ -1,19 +1,30 @@
 <header class="header">
     <div class="logo">
-        <img src="https://images.vexels.com/media/users/3/224138/isolated/preview/ad1194c5e4558e72fa53c869a57b61e1-logotipo-violeta-ondulado-abstracto.png"/>
+        <img src="logo.png"/>
         <p>Juegos 4 Fun</p>
     </div>
-    <nav class="nav">
-        <a routerLink="/">Inicio</a>
-        <a routerLink="/quien-soy">Quien Soy</a>
-        @if (loggedIn() == false) {
-            <a routerLink="/login">Login</a>
-            <a routerLink="/register">Register</a>
-        }
-        
-        @if (loggedIn() == true) {
-            <a (click)="logout()">Logout</a>
+    <div class="nav-container">
+        <div class="nav">
+            <a routerLink="/">Inicio</a>
+            <a routerLink="/quien-soy">Quien Soy</a>
+            @if (loggedIn() == false) {
+                <a routerLink="/login">Login</a>
+                <a routerLink="/register">Register</a>
+            }
+            
+            @if (loggedIn() == true) {
+                <a (click)="logout()">Logout</a>
+            }
+        </div>
+    </div>
+
+    @if (loggedIn() == true) {
+        <div class="user-info">
             <p>{{nombre()}}</p>
-        }
-    </nav>
+        </div>
+    }@else {
+        <div class="user-info">
+            <p>Inicie Sesion!</p>
+        </div>
+    }
 </header>

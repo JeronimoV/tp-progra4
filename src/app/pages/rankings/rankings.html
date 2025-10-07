@@ -1,0 +1,22 @@
+<div class="container">
+    <div>
+        <h2>Ranking Jugadores</h2>
+    <table>
+        <tr>
+            <th>Ahorcado</th>
+            <th>Mayor o Menor</th>
+            <th>Preguntados</th>
+            <th>Test Reflejos</th>
+        </tr>
+        @for (item of puntajesAhorcado; track $index; let idx = $index) {
+            <tr>
+                <td>{{puntajesAhorcado[idx].points}}</td>
+                <td>{{puntajesMayorMenor[idx].points}}</td>
+                <td>{{puntajesPreguntados[idx].points}}</td>
+                <td>{{puntajesReflejos[idx].points}}</td>
+            </tr>
+        }
+
+    </table>
+    </div>
+</div>

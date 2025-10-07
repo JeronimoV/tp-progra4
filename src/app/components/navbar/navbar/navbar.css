@@ -1,8 +1,16 @@
 .header{
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
-    background-color: rgb(176, 66, 204);
+    background-color: #1F1F1F;
     color: white;
+    box-shadow: 5px 2px 20px rgba(0, 0, 0, 0.514);
+}
+
+
+.header > div{
+    width: 33vw;;
 }
 
 .header p{
@@ -12,13 +20,14 @@
 a{
     text-decoration: none;
     color: white;
-    padding: 1vw;
     cursor: pointer;
+    padding: 0.4vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
-
-.header a:hover{
-    background-color: blueviolet;
+a:hover{
+    background-color: #2e1152;
 }
 
 .header div{
@@ -28,20 +37,32 @@ a{
 .logo{
     display: flex;
     align-items: center;
-    width: 75vw;
     margin-left: 1vw;
 }
 
 .logo img{
-    width: 2vw;
-    height: 2vw;
+    width: 3vw;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav{
-    display:flex;
+    background-color: #52238B;
+    border-radius: 99999rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    gap: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.user-info{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1vw;
 }

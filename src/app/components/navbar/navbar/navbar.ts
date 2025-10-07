@@ -1,6 +1,7 @@
 import { Component, signal, OnInit } from '@angular/core';
 import { Router, RouterLink} from '@angular/router';
 import { SupabaseConnection } from '../../../services/database/supabase-connection';
+import { getUserName } from '../../../utils/userInfo';
 
 @Component({
   selector: 'app-navbar',
@@ -13,15 +14,17 @@ export class Navbar implements OnInit {
   nombre = signal("");
 
   async ngOnInit() {
-    this.nombre.set
-    let response = await this.supabase.getUserName();
-    this.nombre.set(response.data.user?.user_metadata["nombre"]);
+    let response = await getUserName(this.supabase)
+    if(response != null){
+      this.nombre.set(response);
+      localStorage.setItem("name", response)
+    }
   }
 
   loggedIn = signal(localStorage.getItem("logged") === "true");
 
 logout() {
-    localStorage.removeItem("logged");
+    localStorage.clear();
     this.loggedIn.set(false);
     this.nombre.set("");
     this.router.navigate(['/login']);

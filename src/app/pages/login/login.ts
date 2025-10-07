@@ -48,6 +48,8 @@ export class Login {
         this.mensaje = response.error.message;
       }else{
         localStorage.setItem('logged', "true");
+        localStorage.setItem("id", response.data.user.id);
+        
         window.location.href = '/';
       }
     });

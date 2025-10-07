@@ -1,6 +1,6 @@
 .main{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +10,7 @@
 .main h1{
     font-size: 3vw;
     font-weight: bolder;
+    color: white;
 }
 
 .main a{
@@ -18,8 +19,7 @@
     font-size: 1.5vw;
     border-radius: 10px;
     cursor: pointer;
-    border: none;
-    background-color: rgb(176, 66, 204);
+    background-color: #52238B;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -27,17 +27,19 @@
 
 .contenedor{
     width: 100vw;
-    height: 60vh;
+    height: 90vh;
     display: grid;
     grid-template-columns: repeat(2, 0.2fr); 
     justify-content: center;
     align-items: center;
+    gap: 1vw;
 }
 
 .card{
     width: 18vw;
-    height: 50vh;
+    height: 40vh;
     cursor: pointer;
+    border: none;
 }
 
 .card img {
@@ -78,19 +80,26 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-color: rgb(176, 66, 204);
+    background-color: #52238B;
     width: fit-content;
     height: 88vh;
-    top: 12vh;
+    bottom: 0px;
     border-radius: 5px;
+    margin-left: 3vw;
 }
 
 .mensajes{
-    background-color: white;
+    background-color: #222222;
+    color: white;
     width: 20vw;
     height: 80vh;
     margin: 1vw;
     border-radius: 5px;
+    overflow:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    padding: 1vw;
 }
 
 form{
@@ -98,4 +107,27 @@ form{
     justify-content: center;
     align-items: center;
     margin-bottom: 1vw;
+}
+
+form input{
+    height: 2vw;
+    width: 17vw;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border: none;
+}
+
+form button{
+    height: 2vw;
+    width: 3vw;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    background-color: #331855;
+    color: white;
+    transition: 0.3s;
+}
+
+form button:hover{
+    background-color: #220c3b;
 }

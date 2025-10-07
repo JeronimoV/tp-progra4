@@ -1,6 +1,31 @@
+<app-volver-boton/>
+
 <div class="main" *ngIf="data">
-    <p>Usuario GitHub: {{ data.login }}</p>
-    <img [src]="data.avatar_url" alt="Avatar de {{ data.login }}" />
-    <p class="text">Link Github: <a href="">{{ data.url }}</a></p>
-    <p class="text">Elegi este proyecto porque: Aca diria el porque pero no hay por que</p>
+    <img [src]="data.avatar_url" alt="Avatar" class="avatar"/>
+    <div class="texto">
+        <h1>{{ data.login }}</h1>
+        <p>Hola, soy Jerónimo, tengo 22 años y estoy construyendo mi camino como desarrollador con una mezcla de curiosidad, estrategia y pasión por el código limpio. Me especializo en crear aplicaciones interactivas tanto en escritorio como en la web, usando tecnologías como C#, WPF y Angular. Me encanta entender el “por qué” detrás de cada solución, y no me conformo con que algo funcione: quiero que esté bien hecho.</p>
+    </div>
+    <img class="back" src="https://i.pinimg.com/originals/01/45/2f/01452ff8c01984e53e02ef877afd6917.png"/>
+</div>
+
+<div class="container">
+
+    <div class="container">
+        <div class="info-adicional">
+            <h2>Info Adicional</h2>
+            <p class="pair">Followers: {{data.followers}}</p>
+            <p>Public repos: {{data.public_repos}}</p>
+            <p class="pair">Porfolio: <a href="data.blog">{{data.blog}}</a></p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="info-adicional">
+            <h2>Info Juego</h2>
+            <p class="pair">Juego: Test Reflejos F1</p>
+            <p>¿Como jugar? Espera que el semaforo se ponga en verde y aprieta el boton</p>
+            <p class="pair">Reglas: Solo hay una regla, no aprietes antes de tiempo</p>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,11 @@
+<app-volver-boton/>
 <app-modal (cambioModal)="cambioModal($event)" [mensaje]="mensaje" [titulo]="titulo" [modalAbierto]="modalAbierto"/>
 <p class="puntos">Puntos: {{puntos}}</p>
-<div>
-    <img (click)="comprobarSeleccion($event)" name="1" src={{imagenCarta1}}/>
-    <img class="secreto" (click)="comprobarSeleccion($event)" name="2" src={{imagenCarta2}}/>
+<div class="contenedor">
+    <img name="1" src={{imagenCarta1}}/>
+    <div class="contenedor-botones">
+        <button class="botones" (click)="comprobarSeleccion($event)" name = "true">Mayor</button>
+        <button class="botones" (click)="comprobarSeleccion($event)" name = "false">Menor</button>
+    </div>
+    <img class="secreto" name="2" src={{imagenCarta2}}/>
 </div>
