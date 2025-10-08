@@ -11,3 +11,12 @@
     color: white;
     z-index: 10;
 }
+
+button{
+    width: 10vw;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: #52238B;
+    border: none;
+    color: white;
+}
