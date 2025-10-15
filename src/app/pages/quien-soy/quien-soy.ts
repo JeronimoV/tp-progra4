@@ -1,11 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { GithubCall } from '../../services/github/github-call';
 import { CommonModule } from '@angular/common';
-import { VolverBoton } from '../../components/volver-boton/volver-boton';
 
 @Component({
   selector: 'app-quien-soy',
-  imports: [CommonModule, VolverBoton],
+  imports: [CommonModule],
   templateUrl: './quien-soy.html',
   styleUrl: './quien-soy.css'
 })

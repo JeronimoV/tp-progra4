@@ -1,9 +1,10 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { GameInfo } from '../../services/gameInfo/game-info';
+import { RankingFormatPipe } from '../../pipes/ranking-format-pipe';
 
 @Component({
   selector: 'app-rankings',
-  imports: [],
+  imports: [RankingFormatPipe],
   templateUrl: './rankings.html',
   styleUrl: './rankings.css',
 })
@@ -85,7 +86,7 @@ export class Rankings {
       array.slice(-cantidadAModificar);
     } else {
       for (let i = 0; i < Math.abs(cantidadAModificar); i++) {
-        array.push({ name: 'Nadie', points: 0 });
+        array.push({ name: '', points: "" });
       }
     }
   }

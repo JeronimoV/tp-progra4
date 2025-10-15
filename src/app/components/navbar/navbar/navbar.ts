@@ -12,6 +12,7 @@ import { getUserName } from '../../../utils/userInfo';
 export class Navbar implements OnInit {
   constructor(private router: Router, private supabase: SupabaseConnection) {}
   nombre = signal("");
+  isAdmin = signal(localStorage.getItem("admin") === "true");
 
   async ngOnInit() {
     let response = await getUserName(this.supabase)

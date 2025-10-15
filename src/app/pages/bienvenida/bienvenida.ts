@@ -1,13 +1,14 @@
 import { Component} from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { RealtimeChat, Message } from '../../services/database/realtime-chat/realtime-chat';
 
+
 @Component({
   selector: 'app-bienvenida',
-  imports: [RouterLink, FormsModule, AsyncPipe, DatePipe],
+  imports: [RouterLink, FormsModule, AsyncPipe, DatePipe, RouterOutlet],
   templateUrl: './bienvenida.html',
   styleUrls: ['./bienvenida.css']
 })

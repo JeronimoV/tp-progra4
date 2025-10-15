@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Encuestas Resultados</h2>
+    <div>
+        <div>
+            <p class="titulos">Promedio puntuacion:</p>
+            <p class="importante">{{puntuacionPromedio || 0}} / 10</p>
+        </div>
+        <div>
+            <p class="titulos">Votos que mejorar</p>
+            <div class="mejoras">
+                <p class="importante">Juegos : {{mejoras.juegos}}</p>
+                <p class="importante">Diseño: {{mejoras.disenio}}</p>
+                <p class="importante">Conexion : {{mejoras.conexion}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <p class="titulos">¿Que opinan los usuarios?</p>
+        <div class="opiniones">
+            @for (item of encuestas; track $index) {
+                <p class="comment">{{item.opinion}}</p>
+            }
+        </div>
+    </div>
+</div>

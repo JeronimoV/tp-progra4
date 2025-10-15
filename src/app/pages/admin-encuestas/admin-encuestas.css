@@ -1,0 +1,55 @@
+.container{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #1F1F1F;
+    margin-top: 20vh;
+    height: 60vh;
+    width: 60vw;
+}
+
+h2{
+    font-size: 2vw;
+    font-weight: bolder;
+}
+
+.opiniones{
+    height: 20vh;
+    width: 50vw;
+    overflow: auto;
+    background-color: black;
+    padding: 1vw;
+    border: 5px;
+}
+
+.titulos{
+    background-color: black;
+    width: 60vw;
+}
+
+.importante{
+    font-size: 1.5vw;
+    font-weight: bolder;
+}
+
+
+.mejoras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.opiniones p{
+    background-color: #1F1F1F;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

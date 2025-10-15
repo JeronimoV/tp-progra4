@@ -1,11 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { GameInfo } from '../../services/gameInfo/game-info';
 import { Modal } from '../../components/modal/modal/modal';
-import { VolverBoton } from '../../components/volver-boton/volver-boton';
 
 @Component({
   selector: 'app-preguntados',
-  imports: [Modal, VolverBoton],
+  imports: [Modal],
   templateUrl: './preguntados.html',
   styleUrl: './preguntados.css',
 })
@@ -35,6 +34,7 @@ export class Preguntados implements OnInit {
 
   puntos: number = 0;
   record: number = 0;
+  tiempo: number = 30;
 
   pregunta: string = '';
 
@@ -65,6 +65,7 @@ export class Preguntados implements OnInit {
         this.respuesta2 = preguntaObject.respuestas[1];
         this.respuesta3 = preguntaObject.respuestas[2];
         this.respuesta4 = preguntaObject.respuestas[3];
+        this.temporizador();
       });
     this.cdr.detectChanges();
   }
@@ -98,5 +99,20 @@ export class Preguntados implements OnInit {
     }else{
       this.finalizarJuego()
     }
+  }
+
+  temporizador(){
+      let countdown = setInterval(() => {
+      this.tiempo--;
+      console.log(this.tiempo);
+      
+    if (this.tiempo <= 0) {
+      clearInterval(countdown);
+      this.finalizarJuego();
+      this.tiempo = 30;
+    }
+    this.cdr.detectChanges();
+  }, 1000);
+
   }
 }

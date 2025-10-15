@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VolverBoton } from './volver-boton';
+import { AdminEncuestas } from './admin-encuestas';
 
-describe('VolverBoton', () => {
-  let component: VolverBoton;
-  let fixture: ComponentFixture<VolverBoton>;
+describe('AdminEncuestas', () => {
+  let component: AdminEncuestas;
+  let fixture: ComponentFixture<AdminEncuestas>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VolverBoton]
+      imports: [AdminEncuestas]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VolverBoton);
+    fixture = TestBed.createComponent(AdminEncuestas);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

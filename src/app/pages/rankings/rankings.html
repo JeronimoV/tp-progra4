@@ -10,10 +10,10 @@
         </tr>
         @for (item of puntajesAhorcado; track $index; let idx = $index) {
             <tr>
-                <td>{{puntajesAhorcado[idx].name}} - {{puntajesAhorcado[idx].points}}</td>
-                <td>{{puntajesMayorMenor[idx].name}} - {{puntajesMayorMenor[idx].points}}</td>
-                <td>{{puntajesPreguntados[idx].name}} - {{puntajesPreguntados[idx].points}}</td>
-                <td>{{puntajesReflejos[idx].name}} - {{puntajesReflejos[idx].points}}</td>
+                <td>{{puntajesAhorcado[idx] | rankingFormat}}</td>
+                <td>{{puntajesMayorMenor[idx] | rankingFormat}}</td>
+                <td>{{puntajesPreguntados[idx] | rankingFormat}}</td>
+                <td>{{puntajesReflejos[idx] | rankingFormat}}</td>
             </tr>
         }
 

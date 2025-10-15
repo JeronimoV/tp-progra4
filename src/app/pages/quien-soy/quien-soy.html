@@ -1,5 +1,3 @@
-<app-volver-boton/>
-
 <div class="main" *ngIf="data">
     <img [src]="data.avatar_url" alt="Avatar" class="avatar"/>
     <div class="texto">
@@ -22,10 +20,19 @@
     
     <div class="container">
         <div class="info-adicional">
-            <h2>Info Juego</h2>
-            <p class="pair">Juego: Test Reflejos F1</p>
-            <p>¿Como jugar? Espera que el semaforo se ponga en verde y aprieta el boton</p>
-            <p class="pair">Reglas: Solo hay una regla, no aprietes antes de tiempo</p>
+            <h2>🚦 Test de Reflejos: El Semáforo</h2>
+            <p class="pair">🎮 Objetivo del juego
+Poner a prueba tu velocidad de reacción. El jugador debe presionar el botón inferior apenas el semáforo se pone en verde. Cuanto más rápido lo haga, mejor será su puntaje.
+</p>
+            <p>📜 Reglas del juego
+- El semáforo comienza en rojo.
+- Cambia a amarillo como advertencia.
+- Finalmente se pone verde en un momento aleatorio.
+- El jugador debe esperar pacientemente y presionar el botón solo cuando esté en verde.
+- Si presiona antes de tiempo (rojo o amarillo), se considera falsa salida.
+</p>
+            <p class="pair">Este juego no tiene ganadores ni perdedores. No hay condición de victoria ni de derrota, porque su objetivo no es competir, sino medir tu tiempo de reacción.
+</p>
         </div>
     </div>
 </div>

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Modal } from '../../components/modal/modal/modal';
 import { GameInfo } from '../../services/gameInfo/game-info';
-import { VolverBoton } from '../../components/volver-boton/volver-boton';
 @Component({
   selector: 'app-ahorcado',
-  imports: [Modal, VolverBoton],
+  imports: [Modal],
   templateUrl: './ahorcado.html',
   styleUrl: './ahorcado.css',
 })

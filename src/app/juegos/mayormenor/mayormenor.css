@@ -1,14 +1,18 @@
+.main-container{
+    height: 100vh;
+}
+
 .contenedor{
     height: 70vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vw;
+    gap: 2vw;
 }
 
 .contenedor img{
-    height: 20vw;
+    height: 15vw;
     cursor: pointer;
     transition: 0.3s;
 }

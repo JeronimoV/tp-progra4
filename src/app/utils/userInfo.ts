@@ -8,3 +8,13 @@ export async function getUserName(supabase : SupabaseConnection){
     }
     return name
 }
+
+export async function isUserAdmin(supabase : SupabaseConnection) {
+    let name = localStorage.getItem("name");
+    let isAdmin = false;
+    if(name != null){
+        let response = await supabase.getUserName(); 
+        isAdmin = response.data.user?.user_metadata["admin"];
+    }
+    return isAdmin;
+}

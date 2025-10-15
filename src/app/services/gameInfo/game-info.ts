@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SupabaseConnection } from '../database/supabase-connection';
 
+
 @Injectable({
   providedIn: 'root'
 })

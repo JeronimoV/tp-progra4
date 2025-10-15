@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SupabaseConnection } from '../../services/database/supabase-connection';
 import { Modal } from '../../components/modal/modal/modal';
@@ -10,7 +10,7 @@ import { Modal } from '../../components/modal/modal/modal';
   styleUrl: './login.css'
 })
 export class Login {
-  constructor(private supabase: SupabaseConnection) {}
+  constructor(private supabase: SupabaseConnection, private cdr : ChangeDetectorRef) {}
 
 
   //////modal//////
@@ -45,10 +45,12 @@ export class Login {
         this.modalAbierto = true;
         this.titulo = "Error";
         this.mensaje = response.error.message;
+        this.cdr.detectChanges();
       }else{
         localStorage.setItem('logged', "true");
         localStorage.setItem("id", response.data.user.id);
         localStorage.setItem("name", response.data.user.user_metadata["nombre"]);
+        localStorage.setItem("admin", response.data.user.user_metadata["admin"]);
         
         
         window.location.href = '/';

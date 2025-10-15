@@ -1,18 +1,21 @@
-<app-volver-boton/>
-<app-modal (cambioModal)="cambioModal($event)" [mensaje]="mensaje" [titulo]="titulo" [modalAbierto]="modalAbierto"/>
 
-<div class="container">
-    <div class="puntaje">
-        <p>Puntos: {{puntos}}</p>
-        <p>Record: {{record}}</p>
-    </div>
-    <div class="container-ask">
-        <p>{{pregunta}}</p>
-    </div>
-    <div class="container-response">
-        <button (click)="elegirRespuesta($event)">{{respuesta1}}</button>
-        <button (click)="elegirRespuesta($event)">{{respuesta2}}</button>
-        <button (click)="elegirRespuesta($event)">{{respuesta3}}</button>
-        <button (click)="elegirRespuesta($event)">{{respuesta4}}</button>
+<app-modal (cambioModal)="cambioModal($event)" [mensaje]="mensaje" [titulo]="titulo" [modalAbierto]="modalAbierto"/>
+<div class="back">
+
+    <div class="container">
+        <div class="puntaje">
+            <p>Puntos: {{puntos}}</p>
+            <p>Tiempo : {{tiempo}} s</p>
+            <p>Record: {{record}}</p>
+        </div>
+        <div class="container-ask">
+            <p>{{pregunta}}</p>
+        </div>
+        <div class="container-response">
+            <button (click)="elegirRespuesta($event)">{{respuesta1}}</button>
+            <button (click)="elegirRespuesta($event)">{{respuesta2}}</button>
+            <button (click)="elegirRespuesta($event)">{{respuesta3}}</button>
+            <button (click)="elegirRespuesta($event)">{{respuesta4}}</button>
+        </div>
     </div>
 </div>

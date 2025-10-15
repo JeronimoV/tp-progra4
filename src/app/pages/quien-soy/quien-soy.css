@@ -43,9 +43,9 @@
 
 .info-adicional{
     flex-direction: column;
-    margin-top: 18vh;
+    margin-top: 8vh;
     border: 10px;
-    width: 25vw;
+    width: 30vw;
     color: white;
 }
 

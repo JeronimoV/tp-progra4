@@ -87,6 +87,7 @@
     border-radius: 5px;
     margin-left: 3vw;
     transition: 0.3s;
+    z-index: 1;
 }
 
 .contenedor-chat:hover{
@@ -100,6 +101,11 @@
 
 .contenedor-chat:hover .texto-invisible{
     display: none;
+    transition: 0s;
+}
+
+.contenedor-chat:hover form{
+    display: flex;
     transition: 0s;
 }
 
@@ -144,7 +150,7 @@
 }
 
 form{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin-bottom: 1vw;

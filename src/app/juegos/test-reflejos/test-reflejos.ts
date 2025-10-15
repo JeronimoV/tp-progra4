@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { Modal } from '../../components/modal/modal/modal';
 import { GameInfo } from '../../services/gameInfo/game-info';
-import { VolverBoton } from '../../components/volver-boton/volver-boton';
 
 @Component({
   selector: 'app-test-reflejos',
-  imports: [Modal, VolverBoton],
+  imports: [Modal],
   templateUrl: './test-reflejos.html',
   styleUrl: './test-reflejos.css'
 })
@@ -63,7 +62,10 @@ export class TestReflejos {
       this.titulo = "Test Finalizado";
       this.mensaje = `Tu tiempo fue de: ${tiempo}`;
       this.modalAbierto = true;
+      console.log("estoy aca putos");
+      
     }
+    console.log("estoy aca putos");
   }
 
   temporizador(){
@@ -78,7 +80,6 @@ export class TestReflejos {
     }else{
       this.temporizadorFinal = time
       this.temporizadorIniciado = false;
-      this.moverFormula1();
       this.reiniciarRonda()
     }
     let diferenciaSegundos = (this.temporizadorFinal - this.temporizadorInicio)*(1/1000);
@@ -97,13 +98,6 @@ export class TestReflejos {
     this.imagenSeleccionadaURL.set(`/semaforos/${this.imagenSeleccionada}.png`);
   }
 
-  moverFormula1(){
-    let formula1 = document.getElementsByClassName("formula1")[0] as HTMLElement;
-    formula1.style.left = "90vw";
-    setTimeout(() => {
-      formula1.style.left = "0vw";
-    }, 3000)
-  }
   
 
 }

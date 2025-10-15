@@ -1,8 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SupabaseConnection } from '../../services/database/supabase-connection';
-import { Router } from '@angular/router';
-import { Navbar } from '../../components/navbar/navbar/navbar';
 import { Modal } from "../../components/modal/modal/modal";
 
 @Component({
@@ -12,7 +10,7 @@ import { Modal } from "../../components/modal/modal/modal";
   styleUrl: './register.css',
 })
 export class Register {
-  constructor(private supabase: SupabaseConnection, private router: Router) {}
+  constructor(private supabase: SupabaseConnection, private cdr : ChangeDetectorRef) {}
 
   //////modal//////
 
@@ -42,6 +40,7 @@ export class Register {
         this.modalAbierto=true;
         this.titulo="Error";
         this.mensaje=response.error.message;
+        this.cdr.detectChanges();
       }else{
         localStorage.setItem('logged', "true");
         window.location.href = '/';

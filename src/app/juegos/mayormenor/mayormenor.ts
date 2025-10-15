@@ -1,11 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Modal } from '../../components/modal/modal/modal';
 import { GameInfo } from '../../services/gameInfo/game-info';
-import { VolverBoton } from '../../components/volver-boton/volver-boton';
 
 @Component({
   selector: 'app-mayormenor',
-  imports: [Modal, VolverBoton],
+  imports: [Modal],
   templateUrl: './mayormenor.html',
   styleUrl: './mayormenor.css'
 })

@@ -8,6 +8,7 @@
             <a routerLink="/">Inicio</a>
             <a routerLink="/quien-soy">Quien Soy</a>
             <a routerLink="/rankings">Rankings</a>
+            <a routerLink="/encuesta">Encuesta</a>
             @if (loggedIn() == false) {
                 <a routerLink="/login">Login</a>
                 <a routerLink="/register">Register</a>
@@ -18,10 +19,14 @@
             }
         </div>
     </div>
-
     @if (loggedIn() == true) {
         <div class="user-info">
             <p>{{nombre()}}</p>
+            @if (isAdmin() == true) {
+        <div class="admin-panel">
+            <a routerLink="/encuestaAdmin">Admin Panel</a>
+        </div>
+    }
         </div>
     }@else {
         <div class="user-info">

@@ -18,7 +18,7 @@ export class SupabaseConnection {
     return this.supabase.auth.signUp({
       email,
       password,
-      options: { data: { nombre: nombre, apellido: apellido, edad: edad } },
+      options: { data: { nombre: nombre, apellido: apellido, edad: edad, admin: false } },
     });
   }
 
@@ -32,6 +32,10 @@ export class SupabaseConnection {
 
   getUserName() {
     return this.supabase.auth.getUser();
+  }
+
+  upgradeUser(){
+    return this.supabase.auth.updateUser({ data: { admin: true } });
   }
 
 }

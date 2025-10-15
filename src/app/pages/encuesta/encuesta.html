@@ -1,0 +1,33 @@
+<app-modal (cambioModal)="cambioModal($event)" [mensaje]="mensaje" [titulo]="titulo" [modalAbierto]="modalAbierto"/>
+<div class="container">
+    <form (submit)="enviarEncuesta($event)">
+        <label>Nombre</label>
+        <input required (change)="getData($event)" name="nombre" placeholder="Nombre"/>
+        <label>Apellido</label>
+        <input required (change)="getData($event)" name="apellido" placeholder="Apellido"/>
+        <label>Edad</label>
+        <input required (change)="getData($event)" name="edad" type="number" placeholder="Edad"/>
+        <label>Numero de Telefono</label>
+        <input required type="tel" pattern="\d{2}\s\d{4}-\d{4}" (change)="getData($event)" name="numeroTelefono" placeholder="Formato: 11 1234-5678"/>
+        <label>¿Que te esta pareciendo la pagina?</label>
+        <input required (change)="getData($event)" name="opinion" placeholder="Respuesta aqui"/>
+        <label>Del 1 al 10, ¿Con cuanto nos calificarias? : {{data.puntuacion}}</label>
+        <input required name="puntuacion" (change)="getData($event)" type="range" min="0" max="10" step="1" placeholder="Respuesta aqui"/>
+        <fieldset >
+            <label>¿Que mejorarías?</label>
+            <div>
+                <input type="radio" required (change)="getData($event)" value="juegos" name="mejoras" placeholder="Respuesta aqui"/>
+                <label>Los Juegos</label>
+            </div>
+            <div>
+                <input type="radio" required (change)="getData($event)" value="disenio" name="mejoras" placeholder="Respuesta aqui"/>
+                <label>Diseño</label>
+            </div>
+            <div>
+                <input type="radio" required (change)="getData($event)" value="conexion" name="mejoras" placeholder="Respuesta aqui"/>
+                <label>Conexion</label>
+            </div>
+        </fieldset>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
