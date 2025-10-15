@@ -6,23 +6,23 @@
         <h1>Registrarse</h1>
         <div class="datos">
             <p>Email</p>
-            <input placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"/>
+            <input required placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"/>
         </div>
         <div class="datos">
             <p>Nombre</p>
-            <input placeholder="Nombre" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}"/>
+            <input required placeholder="Nombre" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}"/>
         </div>
         <div class="datos">
             <p>Apellido</p>
-            <input placeholder="Apellido" [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}"/>
+            <input required placeholder="Apellido" [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}"/>
         </div>
         <div class="datos">
             <p>Edad</p>
-            <input placeholder="Edad" type="number" [(ngModel)]="edad" [ngModelOptions]="{standalone: true}"/>
+            <input required placeholder="Edad" type="number" [(ngModel)]="edad" [ngModelOptions]="{standalone: true}"/>
         </div>
         <div class="datos">
             <p>Contraseña</p>
-            <input type="password" placeholder="Contraseña" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}"/>
+            <input required type="password" placeholder="Contraseña" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}"/>
         </div>
         <button (click)="comprobarDatos()">Ingresar</button>
     </form>
